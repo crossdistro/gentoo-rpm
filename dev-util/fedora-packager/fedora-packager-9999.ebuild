@@ -5,7 +5,6 @@
 EAPI=5
 
 inherit fedora-pagure eutils autotools
-[ "${PV}" = 9999 ] && inherit git-r3
 
 DESCRIPTION="Helper scripts for Fedora packagers"
 

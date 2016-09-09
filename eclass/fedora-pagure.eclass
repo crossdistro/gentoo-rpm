@@ -7,6 +7,8 @@
 # Purpose: Fetch projects from Fedora Pagure.
 #
 
+inherit git-r3
+
 PAJURE_PROJECT="${PN}"
 EGIT_REPO_URI="${EGIT_REPO_URI:-"https://pagure.io/${PAJURE_PROJECT}.git"}"
 HOMEPAGE="https://pagure.io/${PAJURE_PROJECT}/"

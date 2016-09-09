@@ -5,7 +5,6 @@ EAPI="5"
 PYTHON_COMPAT=( python2_7 )
 
 inherit fedora-pagure distutils-r1
-[ ${PV} = 9999 ] && inherit git-r3
 
 DESCRIPTION="Fedora utility for working with dist-git"
 

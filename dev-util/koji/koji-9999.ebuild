@@ -5,13 +5,9 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils python-single-r1
-[ "${PV}" = 9999 ] && inherit git-r3
+inherit fedora-pagure python-single-r1 eutils
 
 DESCRIPTION="Build system for the Fedora project"
-HOMEPAGE="https://fedorahosted.org/koji/"
-EGIT_REPO_URI="https://git.fedorahosted.org/git/${PN}"
-[ "${PV}" = 9999 ] || SRC_URI="https://fedorahosted.org/releases/${PN:0:1}/${PN:1:1}/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"

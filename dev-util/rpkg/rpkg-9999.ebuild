@@ -4,8 +4,7 @@
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1 fedora-pagure
-[ "${PV}" = 9999 ] && inherit git-r3
+inherit fedora-pagure distutils-r1
 
 DESCRIPTION="Utility for interacting with rpm+git packaging systems"
 
