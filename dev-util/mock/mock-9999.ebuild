@@ -36,7 +36,7 @@ src_install() {
 	dosym consolehelper /usr/bin/mock || die
 
 	doemptydir /var/cache/mock
-	doemptydir/var/lib/mock
+	doemptydir /var/lib/mock
 }
 
 pkg_postinst() {
