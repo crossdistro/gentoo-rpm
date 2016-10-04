@@ -9,6 +9,6 @@
 
 inherit git-r3
 
-PAJURE_PROJECT="${PN}"
-EGIT_REPO_URI="${EGIT_REPO_URI:-"https://pagure.io/${PAJURE_PROJECT}.git"}"
-HOMEPAGE="https://pagure.io/${PAJURE_PROJECT}/"
+PAGURE_PROJECT="${PN}"
+EGIT_REPO_URI="${EGIT_REPO_URI:-"https://pagure.io/${PAGURE_PROJECT}.git"}"
+HOMEPAGE="https://pagure.io/${PAGURE_PROJECT}/"
