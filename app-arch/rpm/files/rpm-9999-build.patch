@@ -1,0 +1,13 @@
+diff --git a/tools/sepdebugcrcfix.c b/tools/sepdebugcrcfix.c
+index cd7fa02..cc9fad9 100644
+--- a/tools/sepdebugcrcfix.c
++++ b/tools/sepdebugcrcfix.c
+@@ -15,6 +15,8 @@
+ 
+ /* Version 2013-06-24.  */
+ 
++#include "config.h"
++
+ #define _GNU_SOURCE
+ #include <string.h>
+ #include <fcntl.h>
