@@ -3,8 +3,9 @@
 # $Header: $
 
 EAPI=5
+PYTHON_COMPAT=( python{2_7,3_4} )
 
-inherit fedora-pagure eutils autotools
+inherit fedora-pagure autotools python-r1
 
 DESCRIPTION="Helper scripts for Fedora packagers"
 
@@ -27,8 +28,18 @@ RDEPEND="
 
 src_prepare() {
 	[ "${PV}" = 9999 ] && eautoreconf
+
+	python_copy_sources
 }
 
 src_configure() {
-	econf PYTHON=python2
+	python_foreach_impl run_in_build_dir econf
+}
+
+src_compile() {
+	python_foreach_impl run_in_build_dir make DESTDIR="${ED}"
+}
+
+src_install() {
+	python_foreach_impl run_in_build_dir make install DESTDIR="${ED}"
 }

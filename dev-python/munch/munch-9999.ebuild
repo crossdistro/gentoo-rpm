@@ -3,10 +3,9 @@
 
 EAPI="5"
 GITHUB_USER=Infinidat
-PYTHON_COMPAT=( python{2_7,3_3} )
+PYTHON_COMPAT=( python{2_7,3_4} )
 
 inherit fedora-github distutils-r1
-[ "${PV}" = 9999 ] && inherit git-r3
 
 DESCRIPTION="Python dictionary with attribute-style access"
 [ "${PV}" = 9999 ] || SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
