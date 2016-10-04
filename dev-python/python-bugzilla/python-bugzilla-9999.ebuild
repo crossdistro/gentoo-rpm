@@ -19,3 +19,8 @@ DEPEND="
 	dev-python/setuptools
 	|| ( dev-python/python-magic sys-apps/file[python] )
 "
+
+src_prepare() {
+    # Some RH tools use internals despite this trick
+	sed -i '/Clear all other locals/,$ d' bugzilla/__init__.py
+}
