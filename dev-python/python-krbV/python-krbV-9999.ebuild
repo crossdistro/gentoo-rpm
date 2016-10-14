@@ -3,8 +3,9 @@
 # $Header: $
 
 EAPI="5"
+PYTHON_COMPAT=( python2_7 )
 
-inherit fedora-fedorahosted autotools eutils
+inherit fedora-fedorahosted python-r1 autotools eutils
 [ "${PV}" = 9999 ] && inherit git-r3
 
 DESCRIPTION="Python extension module for Kerberos 5"
@@ -26,15 +27,21 @@ RDEPEND="
 
 src_prepare() {
 	[ "${PV}" = 9999 ] && eautoreconf
+
+	python_copy_sources
 }
 
 src_configure() {
-	econf LIBNAME=$(get_libdir)
+	python_foreach_impl run_in_build_dir econf LIBNAME=$(get_libdir)
+}
+
+src_compile() {
+	python_foreach_impl run_in_build_dir make DESTDIR="${ED}"
 }
 
 src_install()
 {
-	default
+	python_foreach_impl run_in_build_dir make install DESTDIR="${ED}"
 
 	dodoc README krbV-code-snippets.py
 
