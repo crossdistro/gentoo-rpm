@@ -19,6 +19,7 @@ DEPEND="
 RDEPEND="
 	app-arch/rpm
 	dev-python/pyopenssl
+	dev-python/python-dateutil
 	dev-python/python-krbV
 	dev-python/urlgrabber
 	sys-apps/yum
