@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="5"
-PYTHON_COMPAT=( python2_7 )
-GITHUB_USER="${PN}"
+PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit fedora-github distutils-r1
 [ "${PV}" = 9999 ] && inherit git-r3
@@ -15,9 +14,16 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
 DEPEND="
-	dev-python/setuptools
-	|| ( dev-python/python-magic sys-apps/file[python] )
+	${COMMON_DEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]
+"
+RDEPEND="
+	${COMMON_DEPEND}
+	|| ( dev-python/python-magic[${PYTHON_USEDEP}] sys-apps/file[${PYTHON_USEDEP}] )
 "
 
 src_prepare() {

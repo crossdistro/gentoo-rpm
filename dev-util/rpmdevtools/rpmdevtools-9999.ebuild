@@ -3,21 +3,19 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-util/rpmdevtools/rpmdevtools-8.3-r1.ebuild,v 1.2 2013/06/04 21:40:33 bicatali Exp $
 
 EAPI=5
+PYTHON_COMPAT=( python{2_7,3_4} )
 
-#inherit python-r1
-[ "${PV}" = 9999 ] && inherit git-r3 autotools
+inherit fedora-fedorahosted git-r3 python-r1 autotools
 
 DESCRIPTION="Collection of rpm packaging related utilities"
-HOMEPAGE="https://fedorahosted.org/rpmdevtools/"
-EGIT_REPO_URI="https://git.fedorahosted.org/git/${PN}"
-[ "${PV}" = 9999 ] || SRC_URI="https://fedorahosted.org/releases/r/p/${PN}/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="emacs"
 
 COMMON_DEPEND="
-	app-arch/rpm[python]
+	${PYTHON_DEPS}
+	app-arch/rpm[${PYTHON_USEDEP}]
 	net-misc/curl
 	emacs? ( app-emacs/rpm-spec-mode )
 	dev-util/checkbashisms

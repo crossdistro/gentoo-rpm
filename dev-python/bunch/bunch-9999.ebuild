@@ -3,7 +3,7 @@
 
 EAPI="5"
 GITHUB_USER=dsc
-PYTHON_COMPAT=( python{2_7,3_3} )
+PYTHON_COMPAT=( python{2_7,3_4} )
 
 inherit fedora-github distutils-r1
 [ "${PV}" = 9999 ] && inherit git-r3
@@ -16,7 +16,14 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
 DEPEND="
-	dev-python/nose
-	dev-python/setuptools
+	${COMMON_DEPEND}
+	dev-python/nose[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+"
+RDEPEND="
+	${COMMON_DEPEND}
 "

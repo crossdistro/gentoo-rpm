@@ -16,15 +16,16 @@ SLOT="0"
 KEYWORDS=""
 
 COMMON_DEPEND="
+	${PYTHON_DEPS}
 	dev-python/copr
 "
 DEPEND="
 	${COMMON_DEPEND}
 "
 RDEPEND="
-	dev-python/marshmallow
-	dev-python/requests-toolbelt
 	${COMMON_DEPEND}
+	dev-python/marshmallow[${PYTHON_USEDEP}]
+	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
 "
 
 S="${WORKDIR}/${P}/cli"

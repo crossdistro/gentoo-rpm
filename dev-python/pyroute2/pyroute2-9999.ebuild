@@ -13,6 +13,16 @@ LICENSE="GPLv2+"
 
 SLOT="0"
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
+DEPEND="
+	${COMMON_DEPEND}
+"
+RDEPEND="
+	${COMMON_DEPEND}
+"
+
 src_prepare() {
 	make setup.py
 }

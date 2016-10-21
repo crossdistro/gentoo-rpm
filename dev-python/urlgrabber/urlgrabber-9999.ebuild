@@ -17,6 +17,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND="dev-python/pycurl[${PYTHON_USEDEP}]"
-RDEPEND="${DEPEND}"
-# Entire testsuite relies on connecting to the i'net
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
+DEPEND="
+	${COMMON_DEPEND}
+"
+RDEPEND="
+	dev-python/pycurl[${PYTHON_USEDEP}]
+	${COMMON_DEPEND}
+"

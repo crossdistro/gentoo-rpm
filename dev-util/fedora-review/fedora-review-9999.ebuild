@@ -18,8 +18,13 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
 DEPEND="
+	${COMMON_DEPEND}
 "
 RDEPEND="
-	dev-python/requests
+	${COMMON_DEPEND}
+	dev-python/requests[${PYTHON_USEDEP}]
 "

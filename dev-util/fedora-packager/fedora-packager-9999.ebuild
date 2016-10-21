@@ -14,17 +14,23 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
+DEPEND="
+	${COMMON_DEPEND}
+"
 RDEPEND="
-	dev-python/iniparse
-	dev-python/pycurl
-	dev-python/urlgrabber
-	dev-util/fedpkg
-	dev-util/koji
-	dev-util/mock
-	dev-util/rpmdevtools
+	${COMMON_DEPEND}
+	dev-python/pycurl[${PYTHON_USEDEP}]
+	dev-python/urlgrabber[${PYTHON_USEDEP}]
+	dev-util/fedpkg[${PYTHON_USEDEP}]
+	dev-util/koji[${PYTHON_USEDEP}]
+	dev-util/rpmdevtools[${PYTHON_USEDEP}]
 	net-misc/curl
 "
-# dev-util/rpmlint
+# dev-python/iniparse[${PYTHON_USEDEP}]
+# dev-util/mock[${PYTHON_USEDEP}]
 
 src_prepare() {
 	[ "${PV}" = 9999 ] && eautoreconf

@@ -15,12 +15,13 @@ KEYWORDS=""
 IUSE=""
 
 COMMON_DEPEND="
-	dev-python/chardet
+	${PYTHON_DEPS}
+	dev-python/chardet[${PYTHON_USEDEP}]
 "
 DEPEND="
 	${COMMON_DEPEND}
-	dev-python/nose
-	dev-python/sphinx
+	dev-python/nose[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
 "
 RDEPEND="
 	${COMMON_DEPEND}

@@ -20,19 +20,19 @@ src_unpack() {
 }
 
 COMMON_DEPEND="
-	dev-python/git-python
-	dev-python/kitchen
-	dev-python/pycurl
-	dev-util/koji
+	${PYTHON_DEPS}
+	dev-python/git-python[${PYTHON_USEDEP}]
+	dev-python/kitchen[${PYTHON_USEDEP}]
+	dev-python/pycurl[${PYTHON_USEDEP}]
+	dev-util/koji[${PYTHON_USEDEP}]
 "
 DEPEND="
 	${COMMON_DEPEND}
-	dev-python/setuptools
+	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	app-arch/rpm[python]
-	dev-util/mock
+	app-arch/rpm[${PYTHON_USEDEP}]
 	net-misc/curl
 	net-misc/openssh
 "

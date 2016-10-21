@@ -14,19 +14,20 @@ KEYWORDS=""
 IUSE=""
 
 COMMON_DEPEND="
-	dev-util/rpkg
+	${PYTHON_DEPS}
+	dev-util/rpkg[${PYTHON_USEDEP}]
 "
 DEPEND="
 	${COMMON_DEPEND}
-	dev-python/setuptools
+	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	dev-python/kitchen
-	dev-python/munch
-	dev-python/offtrac
-	dev-python/pycurl
-	dev-python/python-fedora
-	dev-util/koji
-	dev-util/packagedb-cli
+	dev-python/kitchen[${PYTHON_USEDEP}]
+	dev-python/munch[${PYTHON_USEDEP}]
+	dev-python/pycurl[${PYTHON_USEDEP}]
+	dev-python/python-fedora[${PYTHON_USEDEP}]
+	dev-util/koji[${PYTHON_USEDEP}]
+	dev-util/packagedb-cli[${PYTHON_USEDEP}]
 "
+# dev-python/offtrac[${PYTHON_USEDEP}]

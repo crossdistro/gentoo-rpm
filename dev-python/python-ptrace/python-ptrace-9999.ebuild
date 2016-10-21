@@ -19,6 +19,16 @@ IUSE="doc examples"
 
 #PATCHES=( "${FILESDIR}/0.8.1-python3.4.patch" )
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
+DEPEND="
+	${COMMON_DEPEND}
+"
+RDEPEND="
+	${COMMON_DEPEND}
+"
+
 python_test() {
 	"${PYTHON}" runtests.py || die "Testing failed with ${EPYTHON}"
 }

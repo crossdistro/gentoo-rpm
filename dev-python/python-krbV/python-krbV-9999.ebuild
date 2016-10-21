@@ -16,6 +16,7 @@ KEYWORDS=""
 IUSE=""
 
 COMMON_DEPEND="
+	${PYTHON_DEPS}
 	virtual/krb5
 "
 DEPEND="

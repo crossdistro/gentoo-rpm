@@ -18,6 +18,7 @@ SLOT="0"
 [ "${PV}" = 9999 ] || KEYWORDS="~amd64 ~x86"
 
 COMMON_DEPEND="
+	${PYTHON_DEPS}
 	app-arch/rpm[python]
 "
 DEPEND="
@@ -25,8 +26,8 @@ DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	|| ( dev-python/python-magic sys-apps/file[python] )
-	dev-python/pyenchant
+	|| ( dev-python/python-magic[${PYTHON_USEDEP}] sys-apps/file[${PYTHON_USEDEP}] )
+	dev-python/pyenchant[${PYTHON_USEDEP}]
 "
 
 src_install() {

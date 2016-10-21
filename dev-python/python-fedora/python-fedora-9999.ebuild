@@ -15,31 +15,32 @@ KEYWORDS=""
 IUSE=""
 
 COMMON_DEPEND="
-	dev-python/python-bugzilla
-	dev-python/bunch
-	dev-python/cherrypy
-	dev-python/decorator
-	dev-python/feedparser
-	dev-python/kitchen
-	dev-python/mako
-	dev-python/pycurl
-	dev-python/repoze-who-friendlyform
-	dev-python/simplejson
-	dev-python/sqlalchemy
+	${PYTHON_DEPS}
 "
 DEPEND="
 	${COMMON_DEPEND}
-	dev-python/Babel
-	dev-python/nose
-	dev-python/paver
-	dev-python/setuptools
-	dev-python/sphinx
+	dev-python/Babel[${PYTHON_USEDEP}]
+	dev-python/nose[${PYTHON_USEDEP}]
+	dev-python/paver[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	dev-python/lockfile
-	dev-python/urllib3
+	dev-python/python-bugzilla[${PYTHON_USEDEP}]
+	dev-python/bunch[${PYTHON_USEDEP}]
+	dev-python/cherrypy[${PYTHON_USEDEP}]
+	dev-python/decorator[${PYTHON_USEDEP}]
+	dev-python/feedparser[${PYTHON_USEDEP}]
+	dev-python/kitchen[${PYTHON_USEDEP}]
+	dev-python/mako[${PYTHON_USEDEP}]
+	dev-python/pycurl[${PYTHON_USEDEP}]
+	dev-python/simplejson[${PYTHON_USEDEP}]
+	dev-python/sqlalchemy[${PYTHON_USEDEP}]
+	dev-python/lockfile[${PYTHON_USEDEP}]
+	dev-python/urllib3[${PYTHON_USEDEP}]
 "
+# dev-python/repoze-who-friendlyform[${PYTHON_USEDEP}]
 
 src_prepare() {
 	rm -rf tests

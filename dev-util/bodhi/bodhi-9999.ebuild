@@ -19,8 +19,9 @@ KEYWORDS=""
 IUSE="+minimal"
 
 COMMON_DEPEND="
-	!minimal? ( >=dev-python/turbogears-1.0 )
-	!minimal? ( <=dev-python/turbogears-1.5 )
+	${PYTHON_DEPS}
+	!minimal? ( >=dev-python/turbogears-1.0[${PYTHON_USEDEP}] )
+	!minimal? ( <=dev-python/turbogears-1.5[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	${COMMON_DEPEND}

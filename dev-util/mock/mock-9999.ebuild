@@ -17,17 +17,26 @@ SLOT="0"
 [ "${PV}" = 9999 ] || KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
+DEPEND="
+	${COMMON_DEPEND}
+"
 RDEPEND="
-	dev-python/decoratortools
-	sys-apps/usermode
-	sys-apps/yum
+	${COMMON_DEPEND}
+	dev-python/decoratortools[${PYTHON_USEDEP}]
+	dev-util/tito[${PYTHON_USEDEP}]
+	sys-apps/usermode[${PYTHON_USEDEP}]
+	sys-apps/yum[${PYTHON_USEDEP}]
 "
 
 src_prepare() {
 	default
 
-	eautoreconf
+	sed -i 's/^#AC_INIT(/AC_INIT(/' configure.ac
+
+	#eautoreconf
 }
 
 src_install() {

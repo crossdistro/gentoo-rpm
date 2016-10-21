@@ -15,7 +15,14 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
 DEPEND="
-	dev-python/nose
-	dev-python/setuptools
+	${COMMON_DEPENDS}
+	dev-python/nose[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+"
+RDEPEND="
+	${COMMON_DEPENDS}
 "

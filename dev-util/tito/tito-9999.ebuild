@@ -13,8 +13,14 @@ LICENSE="GPL-2+"
 
 SLOT="0"
 
-RDEPEND="
-	dev-python/blessings
+COMMON_DEPEND="
+	${PYTHON_DEPS}
 "
 DEPEND="
+	${COMMON_DEPEND}
+"
+RDEPEND="
+	dev-python/blessings[${PYTHON_USEDEP}]
+	dev-python/pylint[${PYTHON_USEDEP}]
+	${COMMON_DEPEND}
 "

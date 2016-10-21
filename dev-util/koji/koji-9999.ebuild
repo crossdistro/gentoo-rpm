@@ -14,16 +14,21 @@ SLOT="0"
 KEYWORDS=""
 IUSE="+minimal +forked"
 
+COMMON_DEPEND="
+	${PYTHON_DEPS}
+"
 DEPEND="
+	${COMMON_DEPEND}
 "
 RDEPEND="
-	app-arch/rpm
-	dev-python/pyopenssl
-	dev-python/python-dateutil
-	dev-python/python-krbV
-	dev-python/urlgrabber
-	sys-apps/yum
+	${COMMON_DEPEND}
+	app-arch/rpm[${PYTHON_USEDEP}]
+	dev-python/pyopenssl[${PYTHON_USEDEP}]
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/urlgrabber[${PYTHON_USEDEP}]
 "
+# dev-python/python-krbV[${PYTHON_USEDEP}]
+# sys-apps/yum[${PYTHON_USEDEP}]
 
 src_unpack() {
 	use forked && EGIT_REPO_URI="https://pagure.io/forks/pavlix/${PN}.git"

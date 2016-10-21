@@ -21,16 +21,17 @@ KEYWORDS=""
 IUSE=""
 
 COMMON_DEPEND="
-	dev-python/paste
-	dev-python/zope-interface
+	${PYTHON_DEPS}
+	dev-python/paste[${PYTHON_USEDEP}]
+	dev-python/zope-interface[${PYTHON_USEDEP}]
 "
 DEPEND="
-	${RDEPEND}
-	dev-python/coverage
-	dev-python/nose
-	dev-python/setuptools
+	${COMMON_DEPEND}
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/nose[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	dev-python/repoze-who
+	dev-python/repoze-who[${PYTHON_USEDEP}]
 "
