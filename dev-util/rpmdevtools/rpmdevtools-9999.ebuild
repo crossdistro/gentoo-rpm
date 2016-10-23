@@ -35,8 +35,6 @@ RDEPEND="
 
 src_prepare() {
 	[ "${PV}" = 9999 ] && eautoreconf
-
-	sed -ri '1 s/\<python\>/python2/' rpmdev-*
 }
 
 #src_configure() {
