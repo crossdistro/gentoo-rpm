@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI=6
 PYTHON_COMPAT=( python2_7 )
 
 inherit fedora-fedorahosted distutils-r1 git-r3
