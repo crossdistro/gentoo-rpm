@@ -1,4 +1,4 @@
-# gentoo-fedora
+# Gentoo ebuilds for Fedora development
 
 ## Usage
 
