@@ -1,7 +1,7 @@
-# Gentoo ebuilds for Fedora development
+# Gentoo ebuilds for Fedora, CentOS and other RPM distribution development
 
 ## Usage
 
-    layman -a fedora
+    layman -a rpm
 
-    emerge -av @fedora-packaging-9999
+    emerge -av @fedora-packaging-9999 @centos-packaging-9999
