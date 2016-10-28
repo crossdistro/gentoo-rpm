@@ -3,13 +3,13 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-util/mock/mock-1.0.3.ebuild,v 1.3 2012/06/07 21:35:09 zmedico Exp $
 
 EAPI=6
+GITHUB_USER="rpm-software-management"
+PYTHON_COMPAT=( python{2_7,3_4} )
 
-inherit eutils user
-[ "${PV}" = 9999 ] && inherit git-r3 autotools
+inherit fedora-github autotools python-single-r1 eutils user
 
 DESCRIPTION="Build RPM packages in chroots"
 HOMEPAGE="http://fedoraproject.org/wiki/Projects/Mock"
-EGIT_REPO_URI="https://git.fedorahosted.org/git/${PN}"
 [ "${PV}" = 9999 ] || SRC_URI="https://fedorahosted.org/mock/attachment/wiki/MockTarballs/mock-${PV}.tar.gz?format=raw -> mock-${PV}.tar.gz"
 
 LICENSE="GPL-2"
