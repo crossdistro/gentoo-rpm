@@ -13,12 +13,6 @@ SLOT="0"
 KEYWORDS=""
 IUSE="+forked"
 
-src_unpack() {
-	use forked && EGIT_REPO_URI="https://pagure.io/forks/pavlix/${PN}.git"
-
-	git-r3_src_unpack
-}
-
 COMMON_DEPEND="
 	${PYTHON_DEPS}
 	dev-python/git-python[${PYTHON_USEDEP}]
@@ -36,3 +30,9 @@ RDEPEND="
 	net-misc/curl
 	net-misc/openssh
 "
+
+src_unpack() {
+	use forked && EGIT_REPO_URI="https://pagure.io/forks/pavlix/${PN}.git"
+
+	git-r3_src_unpack
+}
