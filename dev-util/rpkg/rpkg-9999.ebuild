@@ -11,7 +11,7 @@ DESCRIPTION="Utility for interacting with rpm+git packaging systems"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="+forked"
+IUSE=""
 
 COMMON_DEPEND="
 	${PYTHON_DEPS}
@@ -30,9 +30,3 @@ RDEPEND="
 	net-misc/curl
 	net-misc/openssh
 "
-
-src_unpack() {
-	use forked && EGIT_REPO_URI="https://pagure.io/forks/pavlix/${PN}.git"
-
-	git-r3_src_unpack
-}
