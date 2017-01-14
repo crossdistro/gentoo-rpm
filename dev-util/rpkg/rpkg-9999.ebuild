@@ -27,6 +27,9 @@ DEPEND="
 RDEPEND="
 	${COMMON_DEPEND}
 	app-arch/rpm[${PYTHON_USEDEP}]
+	dev-python/cccolutils[${PYTHON_USEDEP}]
+	dev-python/osbs-client[${PYTHON_USEDEP}]
 	net-misc/curl
 	net-misc/openssh
+
 "
