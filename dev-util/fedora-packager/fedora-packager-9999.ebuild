@@ -36,6 +36,7 @@ src_prepare() {
 	[ "${PV}" = 9999 ] && eautoreconf
 
 	python_copy_sources
+	default
 }
 
 src_configure() {
