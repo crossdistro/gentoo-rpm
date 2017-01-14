@@ -3,10 +3,10 @@
 ;configuration for koji cli tool
 
 ;url of XMLRPC server
-server = http://koji.fedoraproject.org/kojihub
+server = https://koji.fedoraproject.org/kojihub
 
 ;url of web interface
-weburl = http://koji.fedoraproject.org/koji
+weburl = https://koji.fedoraproject.org/koji
 
 ;url of package download site
 topurl = https://kojipkgs.fedoraproject.org/
@@ -14,12 +14,6 @@ topurl = https://kojipkgs.fedoraproject.org/
 ;path to the koji top directory
 ;topdir = /mnt/koji
 
-anon_retry = true
+authtype = kerberos
+krb_rdns = false
 
-;configuration for SSL authentication
-
-;client certificate
-cert = ~/.fedora.cert
-
-;certificate of the CA that issued the HTTP server certificate
-serverca = ~/.fedora-server-ca.cert
