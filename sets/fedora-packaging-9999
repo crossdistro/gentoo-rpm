@@ -13,6 +13,7 @@
 =dev-python/python-ptrace-9999
 =dev-python/repoze-who-9999
 =dev-python/repoze-who-friendlyform-9999
+=dev-python/reqeusts-kerberos-9999
 =dev-python/urlgrabber-9999
 dev-python/cccolutils/cccolutils-9999.ebuild
 dev-python/dockerfile-parse/dockerfile-parse-9999.ebuild
