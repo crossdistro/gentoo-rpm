@@ -29,10 +29,11 @@ RDEPEND="
 src_prepare() {
 	[ "${PV}" = 9999 ] && eautoreconf
 
-	python_copy_sources
+	default
 }
 
 src_configure() {
+	python_copy_sources
 	python_foreach_impl run_in_build_dir econf LIBNAME=$(get_libdir)
 }
 
