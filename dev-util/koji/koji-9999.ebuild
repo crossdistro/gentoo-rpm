@@ -29,7 +29,6 @@ RDEPEND="
 	dev-python/urlgrabber[${PYTHON_USEDEP}]
 	>=app-crypt/mit-krb5-1.14.4
 "
-# dev-python/python-krbV[${PYTHON_USEDEP}]
 # sys-apps/yum[${PYTHON_USEDEP}]
 
 src_unpack() {
