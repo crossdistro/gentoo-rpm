@@ -20,7 +20,7 @@ LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux"
 
-IUSE="nls python doc caps lua acl selinux"
+IUSE="nls python doc caps lua acl selinux fedora"
 
 RDEPEND="
 	!app-arch/rpm5
@@ -51,10 +51,10 @@ REQUIRED_USE="
 "
 
 src_prepare() {
+	eapply_user
 	epatch \
 		"${FILESDIR}"/${PN}-4.11.0-autotools.patch \
 		"${FILESDIR}"/${PN}-4.8.1-db-path.patch \
-		"${FILESDIR}"/${PN}-4.9.1.2-libdir.patch \
 		"${FILESDIR}"/${PN}-9999-build.patch
 
 	# fix #356769
@@ -73,6 +73,7 @@ src_prepare() {
 src_configure() {
 	append-cppflags -I"${EPREFIX}/usr/include/nss" -I"${EPREFIX}/usr/include/nspr"
 	python_foreach_impl run_in_build_dir econf \
+	    $(usex fedora --with-vendor=redhat) \
 		--without-selinux \
 		--with-external-db \
 		--without-beecrypt \

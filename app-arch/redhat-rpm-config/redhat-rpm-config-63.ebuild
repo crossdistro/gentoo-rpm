@@ -18,7 +18,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	app-arch/rpm[fedora]
+"
 
 # The RPM eclass seems to unpack to the wrong directory
 #S="${WORKDIR}"
