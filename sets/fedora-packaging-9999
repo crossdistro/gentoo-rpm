@@ -1,4 +1,5 @@
 =app-arch/rpm-9999
+=app-arch/redhat-rpm-config-9999
 =dev-python/bunch-9999
 =dev-python/copr-9999
 =dev-python/kitchen-9999
