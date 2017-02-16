@@ -76,7 +76,7 @@ src_configure() {
 	    $(usex fedora --with-vendor=redhat) \
 		--without-selinux \
 		--with-external-db \
-		--without-beecrypt \
+		--with-crypto=nss \
 		$(use_enable python) \
 		$(use_with doc hackingdocs) \
 		$(use_enable nls) \
